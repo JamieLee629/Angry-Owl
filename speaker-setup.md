@@ -31,5 +31,7 @@ VOUT and VU are adjacent pins on some mbed platforms,
 so double check the jumper wire!
 
 - Insert SD Card with desired `.WAV` files pre-loaded onto the card.
-- Load this code onto the MBed, replacing the file name with your `.WAV` file name.
+- Import the [.WAV player demo code](https://github.com/JamieLee629/Angry-Owl/tree/master/wav-player-demo-code) onto the
+ online mbed compiler. Replace the file name with your `.WAV` file name. and compile. Load the bin file that results 
+ from a successful compilation onto the mbed.
 - Start the MBed and hear your sound play.
