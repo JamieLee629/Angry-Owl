@@ -24,8 +24,6 @@ My dad maintains a large garden, but pests like raccoons and deer will often eat
 - 1x [microSD Card - 16GB (Class 10)](https://www.sparkfun.com/products/15051)
 - 2x [Super Bright White 5mm LED for eyes](https://www.adafruit.com/product/754)
 - 3x [PIR Motion Sensors](https://www.adafruit.com/product/189)
-- 1x [Raspberry Pi Camera Module V2](https://www.raspberrypi.org/products/camera-module-v2/)
-- 1x [HS-422 Servo (Clockwise, Stock Rotation)](https://www.servocity.com/hs-422-servo#258=24&259=25)
 - 1x [Pair of 140-RPM Hobby Gearmotors (for wing movement)](https://www.sparkfun.com/products/13302)
 - 2x Dual-H Bridge Module
 - 4x mini breadboards
@@ -37,12 +35,6 @@ My dad maintains a large garden, but pests like raccoons and deer will often eat
 
 ## Part 1 Instructions (Structural Set-up)
 1. Assemble the bare-minimum RedBot Robot Kit by following [Step 2 (Motors and Wheels)](https://learn.sparkfun.com/tutorials/assembly-guide-for-redbot-with-shadow-chassis/2-motors-and-wheels) and [Step 5 (Chassis)](https://learn.sparkfun.com/tutorials/assembly-guide-for-redbot-with-shadow-chassis/5-chassis) in the [Assembly Guide for RedBot with Shadow Chassis](https://learn.sparkfun.com/tutorials/assembly-guide-for-redbot-with-shadow-chassis).
-2. Measure the diameter of the rotational connector on the bottom side of the servo face plate. Drill a hole the size of the 
-servo's face place connector into the bottom of the coffee can. Superglue the servo face plate to the bottom of the 
-inside of the coffee can, with the flat side facing up and the nub fitting securely into the hole of the coffee can. 
-The servo will be attached outside of the bottom of the coffee can later.
-![](images/servo_faceplate_01.jpg)
-![](images/servo_faceplate_02.jpg)
 3. Drill three holes evenly spaced apart around the girth of the coffee can for the PIR Sensors.
 ![pir hole](images/pir_cut_hole_01.jpg)
 ![pir fits so snugly](images/pir_cut_hole_02.jpg)
@@ -158,7 +150,7 @@ void piDetectInvader()
             if(temp == '1') { 
                 alarm = true;
                 led1=1;
-                led2=0;
+                led2=1;
                 startMotors();
                 startSound();
 
@@ -166,7 +158,7 @@ void piDetectInvader()
             if(temp == '0') {
                 alarm = false;
                 led1=0;
-                led2=1;
+                led2=0;
                 stopMotors();
             }
         }
