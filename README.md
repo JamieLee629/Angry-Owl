@@ -66,7 +66,7 @@ help with stability. Hot glue triangle-shaped cardboard support structures under
 1. Wire the motors
 2. [Wire up the speakers and Class-D amplifier.](speaker-setup.md)
 3. Follow the schematic below for guidance on wiring the other parts:
-![]()
+![](images/schematic.png)
 
 Once the parts are wired, write the software (see Software Overview section) and load the code onto the mbed and pi. Once 
 the hardware and software components are completed, place the mini-breadboards 
@@ -192,3 +192,5 @@ Suggested wav file sound clips:
 - Gun Shot
 - Hawk screech
 - Fireworks
+
+## Video Demo
