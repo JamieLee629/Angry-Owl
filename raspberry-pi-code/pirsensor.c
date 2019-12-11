@@ -4,9 +4,6 @@
 *Author        : Alan
 *Website       : www.osoyoo.com
 *Update        : 2017/07/04
-
-Edited: Jamie Lee and Jingyi Yu
-Date: 12/09/2019
 ********************************************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
@@ -18,7 +15,7 @@ Date: 12/09/2019
 #include <termios.h>
 
 #define AlarmPin	        4 // GPIO 23
-#define PIRPin0                 2 // GPIO 17
+#define PIRPin0                 6 // GPIO 17
 #define PIRPin1			1 // GPIO 18
 #define PIRPin2 		3 // GPIO 22
 #define alarmpin		5 // GPIO 24
@@ -52,12 +49,21 @@ int main(void)
 	
 	// initalize connection to mbed
 	int fd = -1;
+	char buf[256];
 	
 	fd = open("/dev/ttyACM0", O_RDWR | O_NOCTTY | O_NDELAY);
 	//open mbed's USB virtual com port
 	if (fd == -1) {
-		printf("open_port: Unable to open /dev/ttyACM - ");
-		return -1;
+		fd = open("/dev/ttyACM1", O_RDWR | O_NOCTTY | O_NDELAY);
+	}
+	if (fd == -1) {
+	        fd = open("/dev/ttyACM2", O_RDWR | O_NOCTTY | O_NDELAY);
+	}
+	if (fd == -1) {
+		fd = open("/dev/ttyACM2", O_RDWR | O_NOCTTY | O_NDELAY);
+	}
+	if (fd == -1) {
+		printf("failed to open connection to mbed");
 	}
 	// Turn off blocking for reads, use (fd, F_SETFL, FNDELAY) if you want that
         fcntl(fd, F_SETFL, 0);
@@ -75,8 +81,10 @@ int main(void)
 	int x, y, z;
 	
 	while(1){
+	  //int mbed_read = read(fd,buf,1);
 	   if((x = digitalRead(PIRPin0)) || (y =digitalRead(PIRPin1)) || (z=digitalRead(PIRPin2))) {
 		digitalWrite(AlarmPin, HIGH);
+		//printf("%d\n", mbed_read);
 		printf("\n");
 		printf("|       alarm...   |\n");
 		
@@ -89,15 +97,21 @@ int main(void)
 		}
 		
 		// Send signal to mbed when pir sensor is triggered
-		write(fd,"1",1);        // on
-		
+		//if (mbed_read) {
+		  write(fd,"1",1);        // on
+		  //printf("Read ack signal from mbed. Wrote 1 to mbed.");
+		//}
 		delay(1000);
 		}
 		else{
 		digitalWrite(AlarmPin, LOW);
 		printf("\n");
 		printf("|   no alarm...    |\n");
-		write(fd,"0",1);        // off
+		//if(mbed_read) {
+		  write(fd,"0",1);        // off
+		  
+		  //printf("Read ack signal from mbed. Wrote 1 to mbed.");
+		//}
 		delay(1000);
 		}
 	}
