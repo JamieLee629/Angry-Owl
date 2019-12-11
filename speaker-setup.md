@@ -35,3 +35,7 @@ so double check the jumper wire!
  online mbed compiler. Replace the file name with your `.WAV` file name. and compile. Load the bin file that results 
  from a successful compilation onto the mbed.
 - Start the MBed and hear your sound play.
+
+### Troubleshooting
+If your sound comes out distorted and slow, try changing the spi frequency. In this project,
+the spi frequency is set to 8 MHz.

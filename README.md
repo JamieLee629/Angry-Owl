@@ -18,15 +18,16 @@ My dad maintains a large garden, but pests like raccoons and deer will often eat
     - 1x [Pair of 140-RPM Hobby Gearmotors](https://www.sparkfun.com/products/13302)
     - 1x [Shadow Chassis](https://www.sparkfun.com/products/13301)
     - 1x 4 AA Battery Pack and 5v barrel jack breadboard plug
-- 1x [PCB Mount Speaker](https://www.sparkfun.com/products/11089)
-- 1x [Class-D Amplifier](https://os.mbed.com/components/TPA2005D1-Class-D-Audio-Amp/)
-- 1x [SparkFun microSD Transflash Breakout](https://www.sparkfun.com/products/544)
-- 1x [microSD Card - 16GB (Class 10)](https://www.sparkfun.com/products/15051)
 - 2x [Super Bright White 5mm LED for eyes](https://www.adafruit.com/product/754)
 - 3x [PIR Motion Sensors](https://www.adafruit.com/product/189)
 - 1x [Pair of 140-RPM Hobby Gearmotors (for wing movement)](https://www.sparkfun.com/products/13302)
 - 2x Dual-H Bridge Module
 - 4x mini breadboards
+### Parts for Optional Sound Feature
+- 1x [PCB Mount Speaker](https://www.sparkfun.com/products/11089)
+- 1x [Class-D Amplifier](https://os.mbed.com/components/TPA2005D1-Class-D-Audio-Amp/)
+- 1x [SparkFun microSD Transflash Breakout](https://www.sparkfun.com/products/544)
+- 1x [microSD Card - 16GB (Class 10)](https://www.sparkfun.com/products/15051)
 
 ## Structural Parts List
 - An empty coffee can for the owl's body
@@ -38,7 +39,8 @@ My dad maintains a large garden, but pests like raccoons and deer will often eat
 3. Drill three holes evenly spaced apart around the girth of the coffee can for the PIR Sensors.
 ![pir hole](images/pir_cut_hole_01.jpg)
 ![pir fits so snugly](images/pir_cut_hole_02.jpg)
-4. Drill a hole in the front and back to fit the speakers and two holes in the sides to fit the hobby gearmotors.
+4. [OPTIONAL] Drill a hole in the front and back to fit the speakers.
+5. Drill two holes in the sides to fit the hobby gearmotors.
 5. Add additional holes in the bottom of the can to accommodate the wires that will come from the RedBot's wheel motors.
 ![bottom wire holes](images/bottom_wire_holes.jpg)
 6. Sketch and cut out 4 identical cardboard wings.
@@ -56,7 +58,7 @@ help with stability. Hot glue triangle-shaped cardboard support structures under
 
 ## Part 2 Instructions: Hardware Overview
 1. Wire the motors
-2. [Wire up the speakers and Class-D amplifier.](speaker-setup.md)
+2.[OPTIONAL] [Wire up the speakers and Class-D amplifier.](speaker-setup.md)
 3. Follow the schematic below for guidance on wiring the other parts:
 ![](images/schematic.png)
 
@@ -293,3 +295,32 @@ Suggested wav file sound clips:
 - Fireworks
 
 ## Video Demo
+
+### Work in Progress #1
+<figure class="video_container">
+  <video controls="true" allowfullscreen="true" poster="images/wip_1_preview_image.jpg">
+    <source src="videos/wip_1.mp4" type="video/mp4">
+  </video>
+</figure>
+
+### Work in Progress #2
+<figure class="video_container">
+  <video controls="true" allowfullscreen="true" poster="images/wip_2_preview_image.jpg">
+    <source src="videos/wip_2.mp4" type="video/mp4">
+  </video>
+</figure>
+
+### Final Product
+
+
+### Optional Sound Feature
+
+**Warning** In our experience, the wave_player and SDFileSystem libraries on Mbed 2.0 were not very RTOS-friendly 
+when combined with Raspberry PiZero. If sound is to be implemented, the PIR sensor inputs should be received directly
+from the mbed.
+It is recommended not to use 
+<figure class="video_container">
+  <video controls="true" allowfullscreen="true" poster="path/to/poster_image.png">
+    <source src="videos/barking_owl.mp4" type="video/mp4">
+  </video>
+</figure>
