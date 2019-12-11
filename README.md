@@ -3,10 +3,10 @@ ECE4180 Fall 2019 Final Project, Georgia Institute of Technology\
 Project Members: Jamie Lee, Jingyi Yu
 
 ## Summary
-A motion-detecting owl scarecrow controlled by a Raspberry Pi 3 Model B. Can move forwards and backwards, rotate, make scary sounds, flap wings, and shine bright lights in the presence of live garden pests such as rodents and deer. The purpose is to scare away these pests which eat the leaves, fruits and vegetables of garden crops.
+A motion-detecting owl scarecrow controlled by a Raspberry Pi 3 Model B. Can move forwards and backwards, rotate, make scary sounds (optional), flap wings, and shine bright lights in the presence of live garden pests such as rodents and deer. The purpose is to scare away these pests which eat the leaves, fruits and vegetables of garden crops.
 
 ## Background Information
-My dad maintains a large garden, but pests like raccoons and deer will often eat the fruits of his labor. He has tried store-bought deer repellent, but it did not work. It would be useful for gardeners if there was an infrared-detecting scarecrow that can move when it detects a sudden change in infrared radiation levels (i.e. an animal coming into view). Additionally, the scarecrow can make customizable sounds that can [scare the animals away](https://www.thestar.com/news/insight/2016/03/07/the-sound-that-strikes-fear-into-a-raccoons-heart.html). We decided to build our scarecrow in the form of an angry owl. The owl is a common predator among smaller pests, so the form of its silhouette alone can intimidate them. The loud sounds and commotion that the angry owl generates serves to scare off larger pests, such as deer and foxes.
+My dad maintains a large garden, but pests like raccoons and deer will often eat the fruits of his labor. He has tried store-bought deer repellent, but it did not work. It would be useful for gardeners if there was an infrared-detecting scarecrow that can move when it detects a sudden change in infrared radiation levels (i.e. an animal coming into view). Optionally, the scarecrow can make customizable sounds that can [scare the animals away](https://www.thestar.com/news/insight/2016/03/07/the-sound-that-strikes-fear-into-a-raccoons-heart.html). We decided to build our scarecrow in the form of an angry owl. The owl is a common predator among smaller pests, so the form of its silhouette alone can intimidate them. The loud commotion that the angry owl generates serves to scare off larger pests, such as deer and foxes.
 
 ## Electronics Parts List:
 - 1x [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
@@ -296,31 +296,11 @@ Suggested wav file sound clips:
 
 ## Video Demo
 
-### Work in Progress #1
-<figure class="video_container">
-  <video controls="true" allowfullscreen="true" poster="images/wip_1_preview_image.jpg">
-    <source src="videos/wip_1.mp4" type="video/mp4">
-  </video>
-</figure>
-
-### Work in Progress #2
-<figure class="video_container">
-  <video controls="true" allowfullscreen="true" poster="images/wip_2_preview_image.jpg">
-    <source src="videos/wip_2.mp4" type="video/mp4">
-  </video>
-</figure>
-
-### Final Product
-
-
-### Optional Sound Feature
+### [Work in Progress #1](https://drive.google.com/open?id=154FSIQQ-LgN6EOjM2Z1NyNu87U1Fjonf)
+### [Work in Progress #2](https://drive.google.com/open?id=157XXGBkYcu9aNBNSutsDD3ygir7XgGJG)
+### [Final Product]()
+### [Optional Sound Feature (A Barking Owl!)](https://drive.google.com/open?id=15P6EhN3GX4rHE0fRo2KBVwWmqkjTYG7r))
 
 **Warning** In our experience, the wave_player and SDFileSystem libraries on Mbed 2.0 were not very RTOS-friendly 
 when combined with Raspberry PiZero. If sound is to be implemented, the PIR sensor inputs should be received directly
-from the mbed.
-It is recommended not to use 
-<figure class="video_container">
-  <video controls="true" allowfullscreen="true" poster="path/to/poster_image.png">
-    <source src="videos/barking_owl.mp4" type="video/mp4">
-  </video>
-</figure>
+from the mbed. You have been warned.
